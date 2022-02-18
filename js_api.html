@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web API</title>
+</head>
+<body>
+    <!-- <input type="file" id="upload" multiple>
+    <audio src="../audio/mood_24k.mp3" controls="">  </audio>
+
+    <ul id="list"></ul> -->
+
+        <form action="" id="test">
+            <input type="text"  name="uname" required><br>
+            <input type="password" name="password" required><br>
+            <button >Submit</button>
+        </form>
+
+    <script>
+        // document.getElementById("upload").addEventListener("change",function () {
+        //     let upload = this.files;
+        //     console.log(upload);
+
+        //     for(x of upload){
+        //         console.log(x);
+        //         document.getElementById("list").innerHTML += `<li>${x.name}</li> `;
+
+        //     }
+
+        // })
+            document.getElementById("test").addEventListener("submit",function (e) {
+                e.preventDefault();
+                let x = new FormData(this);
+                // console.log(x)
+                for(let pair of x.entries()){
+                    console.log(pair[0]+','+ pair[1]);
+                }
+
+            })
+
+
+    </script>
+</body>
+</html>

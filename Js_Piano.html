@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/piano.jpg">
+    <title>Javascript Piano Project</title>
+</head>
+<body>
+    <input type="text" id="cords">
+    <button onclick="saveCord()"> Save</button>
+    <br><br>
+    <button onclick="run('C4')">C4</button><!--1-->
+    <button onclick="run('D4')">D4</button><!--2-->
+    <button onclick="run('E4')">E4</button><!--3-->
+    <button onclick="run('F4')">F4</button><!--4-->
+    <button onclick="run('G4')">G4</button><!--5-->
+    <button onclick="run('A4')">A4</button><!--6-->
+    <button onclick="run('B4')">B4</button><!--7-->
+    <button onclick="run('C5')">C5</button><!--1-->
+    <br><br>
+    <button onclick="runMemory(m,700)">Tha Gan Moe</button>
+
+    <ul id="list"></ul>
+        
+    <script>
+        let cords = document.getElementById('cords');
+        let pianoMemory = [];
+        let list = document.getElementById("list");
+
+        function run(x) {
+            const a = new Audio(`../audio/${x}.mp3`);
+            a.play();
+            cords.value += x+",";
+            console.log(`You Play ${x} key`)
+
+        };
+
+        function saveCord() {
+            let input = cords.value;
+            pianoMemory.push(input)
+            console.log(`${input} Is  Save In Memory`)
+            cords.value = "";
+
+            pianoMemory.map(function (el,index) {
+                list.innerHTML +=`<li>${el} <button onclick="replay(${index})">Replay </button> </li>`;
+            })
+
+        }
+
+        let m = ["G4","G4","F4","E4","C4","C5","C5","B4","A4","G4","G4","F4","E4","C4","D4","G4","G4",
+        "F4","E4","C4","C5","C5","B4","A4","G4","A4","G4","E4","D4","E4","F4","D4","E4","C5","C5","B4","A4","G4","A4","G4","E4","D4","E4","F4","B4","C5",
+        "C5","C5","C5","C5","D4","C5","B4","A4","G4","E4","F4","F4","F4","F4","G4","F4","E4","D4","E4",
+        "C5","C5","C5","C5","D4","C5","B4","A4","G4","E4","F4","F4","F4","F4","G4","F4","E4","D4","E4",
+        "G4","G4","F4","E4","C4","C5","C5","B4","A4","G4","G4","F4","E4","C4","D4",
+        "G4","G4","F4","E4","C4","C5","C5","B4","A4","G4","A4","G4","E4","D4","E4","F4","B4","C4",
+
+    ];
+        function runMemory(arr,delay=1000) {
+            let x =delay;
+            arr.map(function (el,index) {
+            setTimeout(run,x,el)
+            x += delay;
+        })
+        }
+
+        function replay(x) {
+            let current = pianoMemory[x].split(",");
+            current.pop();
+            runMemory(current);
+        }
+
+
+        document.addEventListener("keyup",function (e) {
+            console.log(e.keyCode)
+            let current = e.keyCode;
+
+            if(current == 65){
+                run("C4")
+            }
+            else if (current == 83){
+                run("D4")
+            }
+            else if(current == 68){
+                run("E4")
+            }
+            else if(current == 70){
+                run("F4")
+            }
+
+            else if(current == 74){
+                run("G4")
+            }
+            else if(current == 75){
+                run("A4")
+            }
+            else if(current == 76){
+                run("B4")
+            }
+            else if(current == 186){
+                run("C5")
+            }
+
+        })
+
+      
+
+        
+
+        
+    </script>
+</body>
+</html>

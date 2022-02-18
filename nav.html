@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Nav Bar</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bona+Nova:wght@400;700&display=swap');
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Bona Nova', serif;
+            
+
+        }
+        body{
+            background-color: #e2f3f5;
+            overflow: hidden;
+        }
+
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            margin: auto;
+            background-color: #f0f0f0;
+            padding: 10px 10px;
+            box-shadow: 0 0 15px rgb(0, 0, 0,0.3);
+        }
+
+        header:hover{
+            box-shadow: 0 0 15px rgb(0, 0, 0,0.8);
+            transition: 0.5s;
+        }
+
+        
+
+        .brand{
+            
+        }
+        .brand a{
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #0e153a;
+        }
+
+        .mobile-menu-btn{
+            display: none;
+            border: none;
+        }
+
+        .nav{
+
+        }
+
+        
+
+        .nav-list{
+
+        }
+        .nav-list li{
+            list-style: none;
+            display: inline-block;
+            width: 120px;
+
+        }
+
+        .nav-item{
+           text-decoration: none;
+          color: #0e153a;
+        }
+
+
+
+        @media screen and (max-width:480px) {
+            header{
+                width: 95%;
+                flex-wrap: wrap;
+            }
+            .mobile-menu-btn{
+                display: block;
+                transition: 1s;
+
+            }
+
+            .nav{
+                display: none;
+                width: 100%;
+
+            }
+            
+
+            .nav-list li{
+                display: block;
+            }
+
+            .nav-item:first-child{
+                margin-top: 15px!important;
+            }
+            
+        }
+
+        .show-nav{
+            display: block;
+            animation: showSlow 1s;
+            z-index: -1;
+            width: 90%;
+            top: 48px;
+            right: ;
+            position: absolute;
+            background-color: #22d1ee;
+            padding: 10px;
+            box-shadow: 0 0 15px rgb(0, 0, 0,0.8);
+        }
+
+
+        @keyframes showSlow{
+            0%{
+                transform: translateY(-100px);
+            }
+
+            100%{
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand animate__animated animate__rotateInDownLeft">
+            <a href="" ">HWH OS</a>
+
+        </div>
+        <button class="mobile-menu-btn" onclick="navControl()"> 
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="nav ">
+            <ul class="nav-list">
+                <li class="animate__animated animate__backInRight">
+                    <a href="#" class="nav-item">Home</a>
+                </li>
+                <li class="animate__animated animate__backInRight">
+                    <a href="#" class="nav-item">About</a>
+                </li>
+                <li class="animate__animated animate__backInRight">
+                    <a href="#" class="nav-item">Service</a>
+                </li>
+                <li class="animate__animated animate__backInRight">
+                    <a href="#" class="nav-item">Gallery</a>
+                </li>
+                <li class="animate__animated animate__backInRight">
+                    <a href="#" class="nav-item">Contact Us</a>
+                </li>
+            </ul>
+
+        </nav>
+
+
+    </header>
+
+    <script>
+        let nav =document.querySelector("nav");
+
+        function navControl(){
+            nav.classList.toggle("show-nav");
+        }
+
+        
+    </script>
+</body>
+</html>

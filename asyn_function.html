@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/6.jpg">
+    <title>Asyn Function & Promise Function</title>
+    
+</head>
+<body>
+    <script>
+        //promise | resolve => then | reject => catch
+    
+        // let x = fetch('https://fakestoreapi.com/products')
+        //     .then(res=>res.json())
+        //     .then(json=>console.log(json))
+
+
+
+        // let y = function () {
+        //     //async proccess
+
+        //     setTimeout(function () {
+        //         return `this is aa`;
+        //     },2000);
+        // }
+
+        //     console.log(y());
+
+
+
+        let x = new Promise(function (resolve) {
+            setTimeout(function () {
+                resolve("this is y")
+            },3000)
+        });
+
+        x.then(function (aa) {
+            console.log(aa)
+        })
+
+
+
+
+    </script>
+</body>
+</html>

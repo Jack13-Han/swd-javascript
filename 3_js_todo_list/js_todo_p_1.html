@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="../../images/13.jpg">
+</head>
+<body>
+    <input type="text" name="" id="input">
+    <br>
+    <ul id="list">
+
+    </ul>
+
+    <script>
+        let input = document.getElementById("input");
+        let list = document.getElementById("list");
+
+        let k = Object.keys(localStorage);
+            k.sort();
+
+        let no = 1;
+        if (localStorage.length>0) {
+            no = eval(k[k.length-1]);
+        }
+
+        document.addEventListener("keyup",function (e) {
+            if (e.keyCode == 13) {
+                let note = input.value;
+                addTolist(note)
+                save(note)
+                console.log(note)
+
+            }  
+        })
+        
+        function addTolist(x,y) {
+            let li = document.createElement("li");
+            let text = document.createTextNode(" - "+x);
+
+
+            let btn = document.createElement("button");
+            let btnText = document.createTextNode("Delete");
+            btn.appendChild(btnText);
+            btn.setAttribute("onclick","del("+y+")")
+            //<button onclick="">Delete</button>
+            //<button onclick="">Edit</button>
+            let edit = document.createElement("button");
+            let editText = document.createTextNode("Edit");
+            edit.appendChild(editText);
+            edit.setAttribute("onclick","edit("+y+")");
+
+
+
+
+            li.appendChild(edit);
+            li.appendChild(btn);
+            li.setAttribute("id","list-"+y)
+
+            //<li></li>
+            li.appendChild(text);
+            list.appendChild(li);
+            input.value = "";
+
+        }
+
+        function save(x) {
+            localStorage.setItem(no,x);
+            no++;
+        }
+
+        function showList() {
+            
+            k.map(function (el) {
+                addTolist(localStorage.getItem(el),el);
+                
+            })
+            console.log(k);
+        }
+
+            function del(x) {
+                console.log(x);
+                localStorage.removeItem(x)
+                let current = document.getElementById("list-"+x);
+                current.remove()
+
+            }
+
+            function edit(x) {
+                console.log(x);
+                let current = document.getElementById("list-"+x);
+                let newText = prompt("Say Something",current.innerHTML);
+                current.innerHTML = newText;
+                console.log("Success")
+                save(newText,x)
+            }
+
+
+        showList()
+    </script>
+</body>
+</html>

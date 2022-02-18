@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Project</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+
+        tr td{
+            border: 2px solid #000;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Global Table</h3>
+    <table>
+        
+        <tbody id="tb">
+           
+        </tbody>
+    </table>
+
+    <h2>Countries Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>No.</td>
+                <td>Countries</td>
+                <td>Total</td>
+                <td>Total Death</td>
+            </tr>
+        </thead>
+        <tbody id="ctb">
+            
+        </tbody>
+    </table>
+
+
+
+    <script src="covid_19.js"></script>
+    <script>
+        console.log("data");
+        let tb = document.getElementById('tb');
+        let global = data.Global;
+        let country = data.Countries;
+        let ctb = document.getElementById('ctb');
+        let i = 1;        
+
+
+
+        for (x in global) {
+            console.log(x);
+            tb.innerHTML += `
+            <tr>
+                <td>${x}</td>
+                <td>${global[x]}</td>
+            </tr>
+            
+            `;
+            
+        }
+        console.log(country[0]);
+
+        // for(x of country){
+            
+        //     ctb.innerHTML += `
+        //                 <tr>
+        //                     <td>${i}</td>
+        //                     <td>${x.Country}</td>
+        //                     <td>${x.TotalConfirmed}</td>
+        //                     <td>${x.TotalDeaths}</td>
+        //                 </tr>
+            
+        //     `;
+        //     i++
+        // }
+
+            country.map(function(el,index){
+                ctb.innerHTML += `
+                        <tr>
+                             <td>${index +1}</td>
+                             <td>${el.Country}</td>
+                             <td>${el.TotalConfirmed}</td>
+                             <td>${el.TotalDeaths}</td>
+                         </tr>
+                
+                `;
+            })
+
+    </script>
+</body>
+</html>

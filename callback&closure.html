@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/4.jpg">
+    <title>Callback & Closure</title>
+</head>
+<body>
+    <button id="one">Click</button>
+
+    <script>
+        // function aa(){
+        //     console.log("this is aa");
+
+        //     function aaa(){
+        //         console.log("this is aaa");
+        //     }
+
+        //     aaa();
+        // }
+
+
+        // function bb(x,y){
+        //     let result = x*y;
+        //     function bbb(z){
+        //         console.log("This is final result = "+z);
+        //     }
+
+        //     bbb(result)
+        // }
+
+
+        // document.getElementById('one').addEventListener("click",function(){
+
+        // })
+
+
+        function dd(x) {
+            console.log("final result is" +x)
+        }
+
+        function cc(x,y,Callback){
+            let z = x+y;
+            Callback(z);
+        }
+         
+        cc(4,19,dd)
+        
+
+    </script>
+</body>
+</html>

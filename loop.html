@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            
+
+        }
+
+        tr td{
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+        }
+
+        .dark{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody id="tbody"></tbody>
+      
+      
+    </table>
+
+
+<script>
+    let tbody = document.getElementById("tbody");
+
+    for (let i = 1; i <=8; i++) {
+        let td = "";
+            if (i%2 !=0) {
+                //row odd
+                for (let x = 1; x <=8; x++) {
+            if( x%2 != 0){
+                //coloumn odd
+                td += `<td></td>`;
+            }
+            else{
+
+                //coloumn enent
+                td += `<td class="dark"></td>`;
+            }
+
+           
+            
+        }
+            }else{
+                //row event
+                for (let x = 1; x <=8; x++) {
+            if( x%2 != 0){
+                //coloumn odd
+                td += `<td class="dark"></td>`;
+
+            }
+            else{
+                td += `<td></td>`;
+
+                //coloumn enent
+            }
+
+           
+            
+        }
+
+            }
+
+        
+       
+        tbody.innerHTML += `<tr>${td}</tr>`;
+    }
+
+
+
+
+
+    // for (let i=10;i>=1;i--){
+    //     let star ="";
+    //     for (let x=1;x<=i;x++){
+    //        star += "* ";
+
+    //     }
+    //     console.log(star);
+
+    // }
+
+</script>
+</body>
+</html>

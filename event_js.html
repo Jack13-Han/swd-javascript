@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/16.jpg">
+    <title>Event Capturing & Event Bubbling</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        #out{
+            width: 550px;
+            margin: 100px auto;
+            padding: 10px;
+            background-color: #eee;
+
+        }
+
+        #mid{
+            padding: 50px;
+            background-color: #ddd;
+        }
+
+        #inner{
+            padding: 100px;
+            background-color: #ccc;
+        }
+        div:hover{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="out" >
+        <div id="mid" >
+            <div id="inner">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("out").addEventListener("click",function () {
+            run(`1 out`)
+        },true);
+
+        document.getElementById("mid").addEventListener("click",function () {
+            run(`2 min`)
+        },true);
+
+        document.getElementById("inner").addEventListener("click",function () {
+            run(`3 inner`)
+        },true);
+
+
+        function run(x) {
+            return console.log(`I'm ${x} layer`)
+        }
+    </script>
+</body>
+</html>

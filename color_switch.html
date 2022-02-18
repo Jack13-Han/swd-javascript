@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Switch</title>
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="color-switcher">
+        <div class="color-switcher-btn">
+            <i class="fas fa-cog fa-pulse"></i>
+        </div>
+
+        <h3>Select Color</h3>
+
+
+        <div class="theme-buttons-container">
+            <span class="theme-buttons" data-color="#8e44ad" style="background: #8e44ad;"></span>
+            <span class="theme-buttons" data-color="#293ad9" style="background: #293ad9;"></span>
+            <span class="theme-buttons" data-color="#11afdd" style="background: #11afdd;"></span>
+            <span class="theme-buttons" data-color="#abc889" style="background: #abc889;"></span>
+            <span class="theme-buttons" data-color="#ccc222" style="background: #ccc222;"></span>
+            <span class="theme-buttons" data-color="#fff666" style="background: #fff666;"></span>
+            <span class="theme-buttons" data-color="#172786" style="background: #172786;"></span>
+            <span class="theme-buttons" data-color="#adee88" style="background: #adee88;"></span>
+            <span class="theme-buttons" data-color="#737320" style="background: #737320;"></span>
+            <span class="theme-buttons" data-color="#24ddff" style="background: #24ddff;"></span>
+        </div>
+
+
+
+    </div>
+
+    <div class="container">
+        <h1 class="">Color Switch</h1>
+    </div>
+
+    <!-- <script src="fontawesome-free-5.15.4-web/js/all.js"></script> -->
+
+    <script src="app.js"></script>
+    <script>
+        
+
+        document.querySelector(".color-switcher-btn").addEventListener("click",function(){
+            document.querySelector(".color-switcher").classList.toggle("active")
+        })
+
+
+
+        let themeButton = document.querySelectorAll(".theme-buttons");
+        themeButton.forEach(color =>{
+            color.addEventListener("click", function () {
+                let dataColor = color.getAttribute("data-color");
+                document.querySelector(":root").style.setProperty("--main-color", dataColor);
+              })
+        });
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Class</title>
+</head>
+<body>
+    <script>
+        let myObj ={
+            name:"Han Wai Htun",
+            age :19,
+            indroduction: function () {
+                return "My name is ${this.name} and ${this.age} years old";
+            }
+        }
+
+
+        class Me {
+            name= "Han Wai Htun";
+            age = 19;
+
+            //access modifior
+            #gf="Khun Cho Thar"//private property 
+
+            showGf(){
+                return `${this.#gf} is my GirlFriend`;
+            }
+
+            indroduction() {
+                return "My name is ${this.name} and ${this.age} years old";
+        }
+
+
+    }
+
+    class Reg{
+
+        //megic methid
+        constructor(name,age){
+            this.name = name;
+            this.age  = age;
+            console.log("this is constructor")
+        }
+
+        //prototype Method 
+        get showBd(){
+            let currentYear = 2021;
+            return currentYear-this.age;
+        }
+
+        //static method
+        static Test(){
+
+            console.log("this is static method")
+        }
+
+    }
+
+
+
+    </script>
+</body>
+</html>

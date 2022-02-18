@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map, Filter & Reduce</title>
+    <style>
+
+    </style>
+</head>
+<body>
+        <h3>Most Popular Array Method</h3>
+        
+
+
+    <script>
+        let arry =["Banana", "Orange", "Apple","Mango","Lemon"];
+        let numArr = [15,17,2,-3,6,2,1,100,3,5,0,5];
+        let apiData = [
+            {id:1,name: "mg mg",age:14,room:"a",donate:350},
+            {id:2,name:"Kyaw Kyaw",age:16,room:"e",donate:100},
+            {id:3,name:"Ko Ko",age:17,room:"b",donate:200},
+            {id:4,name:"Mya Mya",age:28,room:"a",donate:150},
+            {id:5,name:"Hla Hla",age:11,room:"c",donate:700},
+        ]
+
+
+        let arry2 = apiData.map(function (el,index) {
+            return el.name;
+        })
+
+
+        // let arr2 = apiData.filter(el=>el.room=="a")
+        let arr2 = apiData.map(el=>el.donate).reduce((x,y) => x+y)
+        console.log(arr2)
+    </script>
+</body>
+</html>

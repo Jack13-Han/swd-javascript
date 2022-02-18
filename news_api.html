@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News API</title>
+    
+    <link rel="icon" href="../images/15.jpg">
+    <style>
+
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        #news{
+            width: 95%;
+           margin:  100px auto;
+           columns: 3 200px;
+
+        }
+
+        .card{
+            width: 100%;
+        }
+
+        .card-img{
+            width: 100%;
+        }
+
+        .title{
+
+        }
+
+        .author{
+
+        }
+
+        .description{
+
+        }
+
+        .read-more{
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="news">
+        
+    </div>
+
+    <script src="news.js"></script>
+    <script>
+        console.log(data)
+        let articles = data.articles;
+        let news = document.getElementById("news");
+        
+        articles.map(function (el,index) {
+            news.innerHTML += `
+            
+            <div class="card">
+                <img src="${el.urlToImage}" alt="" class="card-img">
+                <h4 class="title">${el.title}</h4>
+                <small class="author">${el.author}</small>
+                <p class="description">${el.description}</p>
+                <a href="${el.url}" class="read-more">Read More</a>
+             </div>
+            
+            `;
+        })
+
+
+    </script>
+</body>
+
+</html>

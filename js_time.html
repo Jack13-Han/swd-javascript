@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout & Set Interval</title>
+</head>
+<body>
+    <p>
+
+    </p>
+    <button onclick="stop()">Stop</button>
+    <script>
+        let p = document.querySelector("p");
+
+        // let test = function test() {
+        //    p.innerHTML += "this is test <br>";
+        // }
+
+        // setInterval(test,1000);
+        let d = new Date();
+        function showTime() {
+            
+            p.innerHTML +=`${d.getHours()}: ${d.getMinutes()}:${d.getSeconds()}<br>`;
+
+        }
+
+        let run = setInterval(showTime,1000)
+        console.log(d)
+
+        function stop() {
+            clearInterval(run)
+        }
+    </script>
+</body>
+</html>
