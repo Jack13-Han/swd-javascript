@@ -446,6 +446,16 @@ const product = [
 ];
 
 
+console.log(products.reduce((pv,pc) => pv+pc.price,0))
+console.log(fruits.reduce((pv,cv)=>pv+cv,""))
+console.log(numbers.reduce((pv,cv)=>pv+cv,0))
+
+
+// console.log(numbers.reduce((pv,cv) => {
+//   console.log(pv,cv)
+//   return pv+cv
+// } ,0)) //array ထဲမှာပါတဲ့ ဂဏန်းတွေပေါင်းချင်တဲ့ အခါတိုင်းမှာ initail vale ကို 0 ဘဲ ထားပါ ။ စာသားတွေပေါင်းချင်ရင် string အလွှတ်ထားပေးလိုက်ပါ
+
 //   Find
 // console.log(numbers.find((point)=>point == 12)) //find က မတွေ့မချင်း loop ပတ်တယ် တွေ့ရင် ရပ်သွားတယ် နာမည်ကြီးတဲ့ js အသုံးအနှုန်း
 
