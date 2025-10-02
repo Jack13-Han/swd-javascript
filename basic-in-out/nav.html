@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Nav Menu</title>
+</head>
+
+<body>
+
+    <header class="border-b-2 border-b-black py-5 fixed w-full z-50 bg-white">
+        <div class="w-[80%] mx-auto">
+            <div class="flex justify-between">
+                <h1 class="text-3xl font-bold font-serif">Logo.</h1>
+                <button id="controlNav">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-10 stroke-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="h-20"></div>
+
+    <section id="sideBar" class="w-[300px] bg-white border-l-2 border-l-4 h-screen pt-25 px-19 fixed z-10 right-0 translate-x-full duration-400">
+        <nav class="flex flex-col">
+            <a class="font-serif  text-xl hover:bg-gray-300 p-5">Home</a>
+            <a class="font-serif  text-xl hover:bg-gray-300 p-5">About</a>
+            <a class="font-serif  text-xl hover:bg-gray-300 p-5">Service</a>
+        </nav>
+    </section>
+    
+    <section class="w-[80%] my-4 mx-auto">
+        <h3 class="font-serif text-xl font-bold">Select Your Skill
+            (<span id="skillCount">0</span>)
+        </h3>
+
+        <ul class="flex mt-3 gap-3">
+            <li class="lists border border-black px-4 py-3">HTML</li>
+            <li class="lists border border-black px-4 py-3">CSS</li>
+            <li class="lists border border-black px-4 py-3">JavaScript</li>
+            <li class="lists border border-black px-4 py-3">Go</li>
+            <li class="lists border border-black px-4 py-3">Php</li>
+            <li class="lists border border-black px-4 py-3">Python</li>
+        </ul>
+    </section>
+
+    <script src="./js/nav.js"></script>
+</body>
+
+</html>
